@@ -1,0 +1,1 @@
+Repositório para armazenar todos os exercícios e projetos desenvolvidos durante oCurso de Python 3 do básico ao avançado - com projetos reais, ministrado pelo professor Luiz Otávio Miranda.
