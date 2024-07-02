@@ -1,8 +1,8 @@
 nome = "Beatriz"
 sobrenome = "Mesquita"
 idade = 22
-ano_nascimento = 2002
-maior_de_idade = (2024 - ano_nascimento) >= 18
+ano_nascimento = 2024 - idade
+maior_de_idade = idade >= 18
 altura_metros = 1.70
 print("Nome: ", nome)
 print("Sobrenome: ", sobrenome)
