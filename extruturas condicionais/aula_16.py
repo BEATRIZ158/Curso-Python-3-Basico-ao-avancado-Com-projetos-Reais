@@ -6,7 +6,7 @@
 entrada = input('Você quer "entrar" ou "sair"? ')
 
 if entrada == 'entrar':
-    print("Voce entrou no sistema!")
+    print("Voce entrou no sistema!") # Indentação
 elif entrada == 'sair': # Senão entrou na primeira, tenho outra opção
     print("Você saiu do sistema")
 else:
