@@ -5,17 +5,30 @@ next -> me entregue o próximo valor
 iter -> me entregue seu iterador
 """
 # for letra in texto
-texto = 'Beatriz'  # iterável
+#texto = iter('Beatriz')  # __iter__()
+texto = 'Beatriz'
 
-# iteratador = iter(texto)  # iterator
+#print(texto.__next__())
+#print(texto.__next__())
+#print(texto.__next__())
+#print(texto.__next__())
+#print(texto.__next__())
+#print(texto.__next__())
+#print(texto.__next__())
 
-# while True:
-#     try:
-#         letra = next(iteratador)
-#         print(letra)
-#     except StopIteration:
-#         break
+#ou
 
-for letra in texto:
-    print(letra)
+#print(next(texto))
 
+# print(texto.__next__())  Dá erro, não tem mais valores
+iteratador = iter(texto)  # iterator
+
+while True:
+    try:
+        letra = next(iteratador)
+        print(letra)
+    except StopIteration: # Ao chegar no fim, ele para o laço
+        break
+
+#for letra in texto:
+#    print(letra)
