@@ -23,6 +23,7 @@ texto = 'Beatriz'
 # print(texto.__next__())  Dá erro, não tem mais valores
 iteratador = iter(texto)  # iterator
 
+# Como o while trata esse erro
 while True:
     try:
         letra = next(iteratador)
@@ -30,5 +31,6 @@ while True:
     except StopIteration: # Ao chegar no fim, ele para o laço
         break
 
+# Como o for trata esse erro
 #for letra in texto:
 #    print(letra)
