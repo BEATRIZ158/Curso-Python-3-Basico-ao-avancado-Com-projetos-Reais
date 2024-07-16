@@ -29,8 +29,9 @@ while True:
                 palavra_formatada[i] = letra
             palavra_formatada_str = ''.join(palavra_formatada) 
             if palavra_chave == palavra_formatada_str:
-                print(f"Você venceu! Com {cont} tentativas")
+                print(f"Você venceu!")
                 print(f"A palavra era {palavra_chave}")
+                print(f"Tentativas: {cont} ")
                 break
     print(f"Palavra formatada: {palavra_formatada_str}")
 
