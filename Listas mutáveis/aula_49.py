@@ -14,7 +14,7 @@ lista = [10, 20, 30, 40]
 # del lista[2]
 # print(lista)
 # print(lista[2])
-lista.append(50)
+lista.append(50) # Adiciona ao final da lista
 lista.pop() # Normalmente usado para eliminar o último elemento, é um método
 lista.append(60)
 lista.append(70)
