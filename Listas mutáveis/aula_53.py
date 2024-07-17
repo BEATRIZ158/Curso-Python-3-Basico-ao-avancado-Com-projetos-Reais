@@ -3,5 +3,5 @@ for in com listas
 """
 lista = ['Maria', 'Helena', 'Luiz']
 
-for nome in lista:
-    print(nome, type(nome))
+for ind, nome in enumerate(lista):
+    print(f"O índice {ind} tem o nome {nome}")
