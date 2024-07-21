@@ -5,7 +5,7 @@ Esse repositório foi criado para guardar todos os exercícios e projetos desenv
 
 O curso foi iniciado em 05/2024 e ao longo do tempo vou fazer alterações necessárias nos códigos e nos projetos desenvolvidos. A espectativa de conclusão é 10/2024. Alguns dos tópicos abordados no curso são:
 
-#️⃣ Python 3 básico (com lógica de programação)  
+#️⃣ Python 3 básico (com lógica de programação) ✔
 #️⃣ Python 3 intermediário (com programação procedural e funcional)  
 #️⃣ Python 3 avançado (com programação orientada a objetos)  
 #️⃣ Módulos do Python, como PySide6 para Interface Gráfica com Qt 6, Selenium, Django e muito mais  
