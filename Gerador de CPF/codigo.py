@@ -1,27 +1,28 @@
 """
-Calculo do primeiro dígito do CPF
+Calculo do segundo dígito do CPF
 CPF: 746.824.890-70
-Colete a soma dos 9 primeiros dígitos do CPF
+Colete a soma dos 9 primeiros dígitos do CPF,
+MAIS O PRIMEIRO DIGITO,
 multiplicando cada um dos valores por uma
-contagem regressiva começando de 10
+contagem regressiva começando de 11
 
-Ex.:  746.824.890-70 (746824890)
-   10  9  8  7  6  5  4  3  2
-*  5   1  9  1  7  8  4  1  8
-   70  36 48 56 12 20 32 27 0
+Ex.:  746.824.890-70 (7468248907)
+   11 10  9  8  7  6  5  4  3  2
+*  7   4  6  8  2  4  8  9  0  7 <-- PRIMEIRO DIGITO
+   77 40 54 64 14 24 40 36  0 14
 
-Somar todos os resultados: 
-70+36+48+56+12+20+32+27+0 = 301
+Somar todos os resultados:
+77+40+54+64+14+24+40+36+0+14 = 363
 Multiplicar o resultado anterior por 10
-301 * 10 = 3010
+363 * 10 = 3630
 Obter o resto da divisão da conta anterior por 11
-3010 % 11 = 7
+3630 % 11 = 0
 Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
 
-O primeiro dígito do CPF é 7
+O segundo dígito do CPF é 0
 """
 while True:
     print("""{} GERADOR DE CPF {}
@@ -43,7 +44,7 @@ while True:
                     print("Você precisa passar 9 dígitos! Tente novamente.")
                 else:
                     break
-                
+            # Descobirndo o primeiro digito!
             try:
                 cpf_numeros = [int(numero) for numero in cpf]
             except ValueError:
@@ -52,18 +53,34 @@ while True:
             if cpf_numeros:
                 resultados = []
                 cont = 0
-                for num in range(10, 1, -1):  # Corrigi a range para 1
+                for num in range(10, 1, -1):
                     resultados.append(cpf_numeros[cont] * num)
                     cont += 1
-                print(f"Resultados: {resultados}")
-                
                 resultado = (sum(resultados) * 10) % 11
                 if resultado > 9:
                     resultado = 0
                 else:
                     resultado = resultado
-                print(f"Resultado do primeiro digito é {resultado}")
+                cpf_numeros.append(resultado)
+                print("CPF com o primeiro digíto encontrado: ", end='')
+                for digito in cpf_numeros:
+                    print(digito, end=' ')
+                print()
+            # Descobirndo o segundo digito!
+            if cpf_numeros:
+                resultados = []
+                cont = 0
+                for num in range(11, 1, -1):
+                    resultados.append(cpf_numeros[cont] * num)
+                    cont += 1
+                resultado = (sum(resultados) * 10) % 11
+                if resultado > 9:
+                    resultado = 0
+                else:
+                    resultado = resultado
+                cpf_numeros.append(resultado)
                 
+            
         elif op == 2:
             print("Você escolheu sair. Tchau, tchau...")
             break
