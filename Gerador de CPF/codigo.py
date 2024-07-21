@@ -43,13 +43,12 @@ while True:
                 if len(cpf) != 9:
                     print("Você precisa passar 9 dígitos! Tente novamente.")
                 else:
-                    break
-            # Descobirndo o primeiro digito!
-            try:
-                cpf_numeros = [int(numero) for numero in cpf]
-            except ValueError:
-                print("CPF deve conter apenas números.")
-                cpf_numeros = []
+                    try:
+                        cpf_numeros = [int(numero) for numero in cpf]
+                        break
+                    except ValueError:
+                        print("CPF deve conter apenas números.")
+                        cpf_numeros = []
             while len(cpf_numeros) != 11:
                 if cpf_numeros:
                     resultados = []
@@ -59,10 +58,7 @@ while True:
                         resultados.append(cpf_numeros[cont] * num)
                         cont += 1
                     resultado = (sum(resultados) * 10) % 11
-                    if resultado > 9:
-                        resultado = 0
-                    else:
-                        resultado = resultado
+                    resultado = 0 if resultado > 9 else resultado
                     cpf_numeros.append(resultado)    
             print("CPF completo: ", end='')
             for digito in cpf_numeros:
