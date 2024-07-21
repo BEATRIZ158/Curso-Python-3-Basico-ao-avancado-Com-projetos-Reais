@@ -50,37 +50,25 @@ while True:
             except ValueError:
                 print("CPF deve conter apenas números.")
                 cpf_numeros = []
-            if cpf_numeros:
-                resultados = []
-                cont = 0
-                for num in range(10, 1, -1):
-                    resultados.append(cpf_numeros[cont] * num)
-                    cont += 1
-                resultado = (sum(resultados) * 10) % 11
-                if resultado > 9:
-                    resultado = 0
-                else:
-                    resultado = resultado
-                cpf_numeros.append(resultado)
-                print("CPF com o primeiro digíto encontrado: ", end='')
-                for digito in cpf_numeros:
-                    print(digito, end=' ')
-                print()
-            # Descobirndo o segundo digito!
-            if cpf_numeros:
-                resultados = []
-                cont = 0
-                for num in range(11, 1, -1):
-                    resultados.append(cpf_numeros[cont] * num)
-                    cont += 1
-                resultado = (sum(resultados) * 10) % 11
-                if resultado > 9:
-                    resultado = 0
-                else:
-                    resultado = resultado
-                cpf_numeros.append(resultado)
-                
-            
+            while len(cpf_numeros) != 11:
+                if cpf_numeros:
+                    resultados = []
+                    cont = 0
+                    inicio = 10 if len(cpf_numeros) == 9 else 11
+                    for num in range(inicio, 1, -1):
+                        resultados.append(cpf_numeros[cont] * num)
+                        cont += 1
+                    resultado = (sum(resultados) * 10) % 11
+                    if resultado > 9:
+                        resultado = 0
+                    else:
+                        resultado = resultado
+                    cpf_numeros.append(resultado)
+                    
+            print("CPF completo: ", end='')
+            for digito in cpf_numeros:
+                print(digito, end=' ')
+            print()
         elif op == 2:
             print("Você escolheu sair. Tchau, tchau...")
             break
