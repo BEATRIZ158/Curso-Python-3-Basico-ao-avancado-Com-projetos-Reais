@@ -63,8 +63,7 @@ while True:
                         resultado = 0
                     else:
                         resultado = resultado
-                    cpf_numeros.append(resultado)
-                    
+                    cpf_numeros.append(resultado)    
             print("CPF completo: ", end='')
             for digito in cpf_numeros:
                 print(digito, end=' ')
