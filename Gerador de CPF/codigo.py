@@ -7,7 +7,7 @@ contagem regressiva começando de 10
 
 Ex.:  746.824.890-70 (746824890)
    10  9  8  7  6  5  4  3  2
-*  7   4  6  8  2  4  8  9  0
+*  5   1  9  1  7  8  4  1  8
    70  36 48 56 12 20 32 27 0
 
 Somar todos os resultados: 
@@ -44,19 +44,26 @@ while True:
                 else:
                     break
                 
-                try:
-                    cpf_numeros = [int(numero) for numero in cpf]
-                except ValueError:
-                    print("CPF deve conter apenas números.")
-                    cpf_numeros = []
-                if cpf_numeros:
-                    resultados = []
-                    for i, num in zip(range(10, 1, -1), cpf_numeros):
-                        resultado = i * num
-                    resultados.append(resultado)
-                    print(f"{num} X {i} = {resultado}")
-    
-                    print("Resultados das multiplicações:", resultados)
+            try:
+                cpf_numeros = [int(numero) for numero in cpf]
+            except ValueError:
+                print("CPF deve conter apenas números.")
+                cpf_numeros = []
+            if cpf_numeros:
+                resultados = []
+                cont = 0
+                for num in range(10, 1, -1):  # Corrigi a range para 1
+                    resultados.append(cpf_numeros[cont] * num)
+                    cont += 1
+                print(f"Resultados: {resultados}")
+                
+                resultado = (sum(resultados) * 10) % 11
+                if resultado > 9:
+                    resultado = 0
+                else:
+                    resultado = resultado
+                print(f"Resultado do primeiro digito é {resultado}")
+                
         elif op == 2:
             print("Você escolheu sair. Tchau, tchau...")
             break
