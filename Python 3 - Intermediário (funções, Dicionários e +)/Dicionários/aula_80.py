@@ -48,10 +48,10 @@ while True:
                         print("A resposta precisa estar entre 1 e 4. Tente novamente!")
                 resposta_usuario = pergunta['Opções'][resposta]
                 if resposta_usuario == pergunta['Resposta']:
-                    print("Resposta correta!")
+                    print("Acertou 👍")
                     certas += 1
                 else:
-                    print("Resposta errada.")
+                    print("Errou ❌")
             print(f"Você acertou {certas} de 3 perguntas")
         elif op == 2:
             print("Saindo...")
@@ -60,3 +60,42 @@ while True:
             print("Valor indisponível. Tente novamente!")
     except ValueError:
         print("A opção escolhida deve ser 1 ou 2!")
+
+# Professor
+
+qtd_acertos = 0
+for pergunta in perguntas:
+    print('Pergunta:', pergunta['Pergunta'])
+    print()
+
+    opcoes = pergunta['Opções']
+    for i, opcao in enumerate(opcoes):
+        print(f'{i})', opcao)
+    print()
+
+    escolha = input('Escolha uma opção: ')
+
+    acertou = False
+    escolha_int = None
+    qtd_opcoes = len(opcoes)
+
+    if escolha.isdigit():
+        escolha_int = int(escolha)
+
+    if escolha_int is not None:
+        if escolha_int >= 0 and escolha_int < qtd_opcoes:
+            if opcoes[escolha_int] == pergunta['Resposta']:
+                acertou = True
+
+    print()
+    if acertou:
+        qtd_acertos += 1
+        print('Acertou 👍')
+    else:
+        print('Errou ❌')
+
+    print()
+
+
+print('Você acertou', qtd_acertos)
+print('de', len(perguntas), 'perguntas.')
