@@ -29,14 +29,18 @@ def ordena(item):
 lista.sort(key=ordena) # ordena retorna item[sobrenome] sort ordena pelo sobrenome
 print(lista)
 
-def exibir(lista):
-    for item in lista:
-        print(item)
-    print()
+#def exibir(lista):
+#    for item in lista:
+#        print(item)
+#    print()
 
-# Passa uma função em key=
+# O parâmetro key é usado para definir um critério pelo qual os itens na lista devem ser ordenados
+
 l1 = sorted(lista, key=lambda item: item['nome']) # Primeiro parametro é a lista, segundo é o item
 l2 = sorted(lista, key=lambda item: item['sobrenome']) # Sorte retorna uma cópia rasa
 
-exibir(l1)
-exibir(l2)
+print(l1)
+print(l2)
+
+#exibir(l1)
+#exibir(l2)
