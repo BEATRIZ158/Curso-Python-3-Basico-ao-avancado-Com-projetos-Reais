@@ -30,3 +30,6 @@ print(f'{flutuante=}', falsy(flutuante))
 print(f'{nada=}', falsy(nada))
 print(f'{falso=}', falsy(falso))
 print(f'{intervalo=}', falsy(intervalo))
+
+# Truthy e Falsy não representam os valores literais True e False, mas indicam como o Python interpreta o valor de um objeto
+# True e False são constantes booleanas, enquanto Truthy e falsy descrevem a "natureza" de qualquer valor em relação a condições booleanas
